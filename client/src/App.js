@@ -1,6 +1,7 @@
 import './App.css';
 import Items from './component/item/items/items'
 import Sizes from './component/sizes/sizes'
+import Cart from './component/cart/cart'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <main className='itemList'>
           <Items/>
       </main>
+      <Cart/>
     </main>
   );
 }
