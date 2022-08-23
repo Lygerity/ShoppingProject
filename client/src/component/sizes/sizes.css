@@ -30,3 +30,7 @@
     opacity: 0;
     cursor: pointer;
 }
+
+.checkbox input:checked{
+    background-color: black;
+}
