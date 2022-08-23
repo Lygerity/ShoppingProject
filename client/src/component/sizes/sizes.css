@@ -1,0 +1,32 @@
+.Size{
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.checkbox {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background-color: rgb(207, 204, 204);
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+}
+
+.Sizes label{
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    width: 35px;
+    height: 35px;
+    margin-right: 8px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.Sizes input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
