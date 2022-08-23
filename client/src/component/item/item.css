@@ -25,11 +25,19 @@
     background-color: black;
     border: transparent;
     font-weight: 500;
+    cursor: pointer;
 } 
 
 .addButton:hover{
+    transition: background-color 0.2s ease 0s;
     background-color: rgba(255, 187, 0, 0.747);
 }
+
+
+.item:hover .addButton{
+    transition: background-color 0.2s ease 0s;
+    background-color: rgba(255, 187, 0, 0.747);
+  }
 
 @media only screen and (min-width: 768px){
     .itemPicture{height: 320px;}
