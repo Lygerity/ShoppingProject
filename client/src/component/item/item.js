@@ -3,8 +3,6 @@ import './item.css';
 
 
 export default function item(props){
-    //const style=`background-image: url(${props.picture})`;
-    //console.log({style});
     
     return (
         <div className='item'>
@@ -16,5 +14,3 @@ export default function item(props){
         </div>
     );
 }
-
-//<img src={props.picture} className='itemPicture' alt='vêtement'/>
