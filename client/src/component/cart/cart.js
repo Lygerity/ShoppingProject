@@ -1,14 +1,19 @@
 import "./cart.css";
-import {React, useState} from 'react';
+
+import {React, useState, useEffect} from 'react';
 export default function Items(props){
 
     const[isOpen, setOpen] = useState(false)
+  
 
     function handleClick(){
         setOpen(!isOpen);
     }
     
+    
+    
     if(!isOpen){
+        
         return(
         <div className="Panier">
         <button className="Cart" onClick={handleClick}>
