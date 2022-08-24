@@ -32,10 +32,18 @@ export default function Items(props){
                     <span>Cart</span>
                 </div>
                 <div className="Content">
-                    <label>No products in the cart :(</label>
+                    <label>No products in the cart</label>
                 </div>
                 <div className="Checkout">
-
+                    <div className="CheckoutDisplay">
+                        <div>
+                            SUBTOTAL
+                        </div>
+                        <div className="Subtotal">
+                            0.00 $
+                        </div>
+                    </div>
+                    <button className="CheckoutButton">CHECKOUT</button>
                 </div>
             </div>
         </div>
