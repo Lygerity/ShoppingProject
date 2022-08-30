@@ -13,7 +13,7 @@ app.use(cors());
 
 
 app.use('/items', itemsRoute);
-app.get('/hello', (req: Request, res: Response)=> res.send('Hello'));
+app.get('/hello', (req, res)=> res.send('Hello'));
 mongoose.connect(MongoUrl)
   .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
   .catch((error) => console.log(`${error} did not connect`));
