@@ -64,3 +64,13 @@ export const updateItem = async(req: Request, res: Response) =>{
     itemsModel.updateOne({_id: itemField.id}, itemField)
     .then(itemField => res.json(itemField));
 }
+
+export const deleteItem = async(req: Request, res: Response)=>{
+    const {id} = req.params;
+    try{
+        await itemsModel.findByIdAndDelete(id);
+        res.json({message: "Item deleted sucsessfully"});
+    }catch(error){
+console.log(error);
+    }
+}

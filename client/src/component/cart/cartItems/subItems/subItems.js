@@ -6,8 +6,7 @@ export default function SubItem(props){
 
     const dispatch = useDispatch();
     const handleClick = () => {
-        console.log(props.id);
-        dispatch(removeItemFromList(props.id));
+        dispatch(removeItemFromList(props.rank));
     }
 
     return(

@@ -1,24 +1,17 @@
 import "./cart.css";
 
-import {React, useEffect, useState} from 'react';
+import {React, useState} from 'react';
 import CartItem from "./cartItems/cartItem";
 import { useSelector } from "react-redux";
 export default function Items(props){
 
     const[isOpen, setOpen] = useState(false)
-    const[subTotal, setSubTotal] = useState(0);
     const cartItems = useSelector((state) => state.items.cartItems)
   
 
     function handleClick(){
         setOpen(!isOpen);
     }
-
-    // useEffect(() => {
-    //     const total = cartItems.map(item => item.price).reduce( (a, b)=> a + b, 0);
-    //     setSubTotal(total); 
-    // }, [cartItems]);
-    
     
     
     if(!isOpen){
