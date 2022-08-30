@@ -1,7 +1,6 @@
 import mongoose, { isObjectIdOrHexString } from "mongoose";
 
 const itemsSchema = new mongoose.Schema({
-    _id: isObjectIdOrHexString,
     name: String,
     price: Number,
     size: [String],

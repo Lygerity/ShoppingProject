@@ -1,14 +1,23 @@
 import "./cart.css";
 
-import {React, useState, useEffect} from 'react';
+import {React, useEffect, useState} from 'react';
+import CartItem from "./cartItems/cartItem";
+import { useSelector } from "react-redux";
 export default function Items(props){
 
     const[isOpen, setOpen] = useState(false)
+    const[subTotal, setSubTotal] = useState(0);
+    const cartItems = useSelector((state) => state.items.cartItems)
   
 
     function handleClick(){
         setOpen(!isOpen);
     }
+
+    // useEffect(() => {
+    //     const total = cartItems.map(item => item.price).reduce( (a, b)=> a + b, 0);
+    //     setSubTotal(total); 
+    // }, [cartItems]);
     
     
     
@@ -18,7 +27,7 @@ export default function Items(props){
         <div className="Panier">
         <button className="Cart" onClick={handleClick}>
             <div className="Icone">
-                <div className="Products">0</div>
+                <div className="Products">{cartItems.length || 0}</div>
             </div>
         </button>
     </div>
@@ -32,12 +41,12 @@ export default function Items(props){
             <div className="contenuPanier">
                 <div className="Head">
                     <div className="Icone2">
-                        <div className="Products2">0</div>
+                        <div className="Products2">{cartItems.length || 0}</div>
                     </div>
                     <span>Cart</span>
                 </div>
                 <div className="Content">
-                    <label>No products in the cart</label>
+                    <CartItem/>
                 </div>
                 <div className="Checkout">
                     <div className="CheckoutDisplay">
@@ -45,7 +54,7 @@ export default function Items(props){
                             SUBTOTAL
                         </div>
                         <div className="Subtotal">
-                            0.00 $
+                            {cartItems.map(item => item.price).reduce( (a, b)=> a + b, 0).toFixed(2)} $
                         </div>
                     </div>
                     <button className="CheckoutButton">CHECKOUT</button>
