@@ -1,0 +1,10 @@
+export const CREATE = 'CREATE';
+export const DELETE = 'DELETE';
+export const FETCH_ALL = 'FETCH_ALL';
+export const FETCH_BY_SIZE = 'FETCH_BY_SIZE';
+export const FETCH_ITEM = 'FETCH_ITEM';
+export const END_LOADING = 'END_LOADING';
+export const START_LOADING = 'START_LOADING';
+export const FETCH_CART = 'FETCH_CART';
+export const ADD_ITEM_TO_LIST = 'ADD_ITEM_TO_LIST';
+export const REMOVE_ITEM_FROM_LIST = 'REMOVE_FROM_LIST';
