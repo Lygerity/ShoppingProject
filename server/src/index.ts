@@ -30,7 +30,6 @@ app.use(cors());
 
 app.use('/items', itemsRoute);
 app.get('/hello', (req, res)=> res.send('Hello'));
-const CONNECTION_URL= 'mongodb+srv://admin:admin@cluster0.4jdrsto.mongodb.net/?retryWrites=true&w=majority';
 //app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`))
 mongoose.connect(MongoUrl)
   .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
