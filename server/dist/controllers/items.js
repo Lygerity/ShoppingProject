@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateItem = exports.postItems = exports.getCart = exports.getItem = exports.getItemsAvailable = void 0;
+exports.deleteItem = exports.updateItem = exports.postItems = exports.getCart = exports.getItem = exports.getItemsAvailable = void 0;
 const express_1 = __importDefault(require("express"));
 const itemsModel_1 = __importDefault(require("../models/itemsModel"));
 const router = express_1.default.Router();
@@ -81,3 +81,14 @@ const updateItem = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         .then(itemField => res.json(itemField));
 });
 exports.updateItem = updateItem;
+const deleteItem = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { id } = req.params;
+    try {
+        yield itemsModel_1.default.findByIdAndDelete(id);
+        res.json({ message: "Item deleted sucsessfully" });
+    }
+    catch (error) {
+        console.log(error);
+    }
+});
+exports.deleteItem = deleteItem;

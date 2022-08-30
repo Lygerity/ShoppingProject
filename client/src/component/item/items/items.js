@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getItemsList } from '../../../actions/items';
 
-export default function Items(props){
+export default function Items({props, admin, setAdmin}){
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(getItemsList())
@@ -18,7 +18,7 @@ export default function Items(props){
         items.map((item, key) =>
             
             <div className='items' key={key}>
-                <Item id={item._id} name={item.name} price={item.price} picture={item.url} size={item.size}></Item>
+                <Item id={item._id} name={item.name} price={item.price} picture={item.url} size={item.size} admin={admin} setAdmin={setAdmin}></Item>
             </div>
         )
     );

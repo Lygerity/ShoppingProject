@@ -33,6 +33,19 @@
     background-color: rgba(255, 187, 0, 0.747);
 }
 
+.deleteItemButton{
+    background-image: url('../../assets/icons/deleteItem.png');
+    cursor: pointer;
+    padding-bottom: 24px;
+    width: 24px;
+    background-color: white;
+    border: 1px solid transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+}
+
 
 .item:hover .addButton{
     transition: background-color 0.2s ease 0s;
@@ -42,3 +55,4 @@
 @media only screen and (min-width: 768px){
     .itemPicture{height: 320px;}
 }
+

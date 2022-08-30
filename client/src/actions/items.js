@@ -24,3 +24,17 @@ export const addItemToList = (payload) => (dispatch) =>{
 export const removeItemFromList = (id) => (dispatch) =>{
     dispatch({type: REMOVE_ITEM_FROM_LIST, id});
 }
+
+export const postItem = (payload) => async(dispatch) =>{
+    try{
+        const { data: data } = await api.postItem(payload)
+        dispatch({type: CREATE, data});
+    }catch(error){
+        console.log(error);
+    }
+}
+
+export const deleteItem = (id) => async(dispatch) =>{
+    await api.deleteItem(id);
+    dispatch({type: DELETE, payload: id});
+}
