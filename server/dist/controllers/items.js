@@ -18,12 +18,10 @@ const itemsModel_1 = __importDefault(require("../models/itemsModel"));
 const router = express_1.default.Router();
 const getItemsAvailable = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const total = yield itemsModel_1.default.countDocuments({});
         const items = yield itemsModel_1.default.find();
         res.json({ data: items });
     }
     catch (error) {
-        //res.status(404).json({message: error.message});
         console.log(error);
     }
 });
@@ -61,8 +59,8 @@ const postItems = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         itemField.url = req.body.url;
     new itemsModel_1.default(itemField)
         .save()
-        .then(itemField => res.json(itemField))
-        .catch(err => console.log(err));
+        .then((itemField) => res.json(itemField))
+        .catch((err) => console.log(err));
 });
 exports.postItems = postItems;
 const updateItem = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -76,8 +74,9 @@ const updateItem = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     if (req.body.url)
         itemField.url = req.body.url;
     itemField.id = req.body._id;
-    itemsModel_1.default.updateOne({ _id: itemField.id }, itemField)
-        .then(itemField => res.json(itemField));
+    itemsModel_1.default
+        .updateOne({ _id: itemField.id }, itemField)
+        .then((itemField) => res.json(itemField));
 });
 exports.updateItem = updateItem;
 const deleteItem = (req, res) => __awaiter(void 0, void 0, void 0, function* () {

@@ -1,4 +1,4 @@
-import mongoose, { isObjectIdOrHexString } from "mongoose";
+import mongoose from "mongoose";
 
 const itemsSchema = new mongoose.Schema({
     name: String,
