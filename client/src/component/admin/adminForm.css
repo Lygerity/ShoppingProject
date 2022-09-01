@@ -1,0 +1,23 @@
+.itemLabel{
+    padding: 15px;
+}
+
+input{ 
+    padding-right: 10px;
+}
+
+.submitButton{
+    margin-left: 50px;
+    width: 130px;
+    height: 40px;
+    border: 1px solid transparent;
+    background-color: black;
+    color: white;
+    font-size: larger;
+    cursor: pointer;
+}
+
+.submitButton:hover{
+    transition: background-color 0.2s ease;
+    background-color: rgba(255, 187, 0, 0.747);
+}
