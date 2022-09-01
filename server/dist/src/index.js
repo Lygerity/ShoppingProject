@@ -15,7 +15,6 @@ app.use(express_1.default.json({ limit: '30mb' }));
 app.use(express_1.default.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
 app.use('/items', items_1.default);
-app.get('/hello', (req, res) => res.send('Hello'));
 mongoose_1.default.connect(MongoUrl)
     .then(() => app.listen(PORT))
     .catch((error) => console.log(`${error} did not connect`));

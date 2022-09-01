@@ -11,7 +11,7 @@ import {
   FETCH_ITEM,
   CLOSE_MODAL,
   UPDATE,
-  UPDATE_TEMPORARLY
+  UPDATE_TEMPORARLY,
 } from "../constants/actionTypes";
 import * as api from "../api/index";
 
@@ -58,18 +58,18 @@ export const idItemToEdit = (id) => (dispatch) => {
   dispatch({ type: ID_TO_EDIT, id });
 };
 
-export const getItem = (id) => async (dispatch) =>{
-    const res = await api.fetchItem(id);
-    dispatch({type: FETCH_ITEM, data: res.data.data});
-}
+export const getItem = (id) => async (dispatch) => {
+  const res = await api.fetchItem(id);
+  dispatch({ type: FETCH_ITEM, data: res.data.data });
+};
 
-export const closeModal = () => (dispatch) =>{
-    dispatch({type: CLOSE_MODAL});
-}
+export const closeModal = () => (dispatch) => {
+  dispatch({ type: CLOSE_MODAL });
+};
 
-export const updateItemTemporarly = (payload) => (dispatch) =>{
-  dispatch({type: UPDATE_TEMPORARLY, payload});
-}
+export const updateItemTemporarly = (payload) => (dispatch) => {
+  dispatch({ type: UPDATE_TEMPORARLY, payload });
+};
 
 export const updateItem = (payload) => async (dispatch) => {
   try {

@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const items_1 = require("../controllers/items");
-//import { postItems } from '../controllers/items';
 const router = express_1.default.Router();
 router.get('/', items_1.getItemsAvailable);
 router.get('/:id', items_1.getItem);

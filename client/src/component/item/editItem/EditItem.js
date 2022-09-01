@@ -4,7 +4,6 @@ import { getItem, updateItemTemporarly } from "../../../actions/items";
 import "./EditItem.css";
 
 export default function EditItem(props) {
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getItem(props.id));
@@ -27,10 +26,18 @@ export default function EditItem(props) {
   }, [itemToEdit]);
 
   useEffect(() => {
-    if(name!=="" && price !=="" && size!=="" && url!==""){
-      dispatch(updateItemTemporarly({_id: itemToEdit._id, name: name, price: price, size: size, url: url}));
+    if (name !== "" && price !== "" && size !== "" && url !== "") {
+      dispatch(
+        updateItemTemporarly({
+          _id: itemToEdit._id,
+          name: name,
+          price: price,
+          size: size,
+          url: url,
+        })
+      );
     }
-  },[name, price, size, url])
+  }, [name, price, size, url]);
 
   return (
     <div className="itemToEdit">
@@ -64,7 +71,7 @@ export default function EditItem(props) {
           ></input>
         </div>
       </form>
-        <div style={{backgroundImage: `url(${url})`}}/>
+      <div style={{ backgroundImage: `url(${url})` }} />
     </div>
   );
 }

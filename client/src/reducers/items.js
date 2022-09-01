@@ -80,7 +80,6 @@ export default (
           ...state,
           editableId: null,
           showModal: false,
-          // itemToEdit: null
         }
     default:
       return state;
