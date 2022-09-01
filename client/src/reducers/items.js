@@ -9,7 +9,8 @@ import {
   REMOVE_ITEM_FROM_LIST,
   ID_TO_EDIT,
   CLOSE_MODAL,
-  UPDATE
+  UPDATE,
+  UPDATE_TEMPORARLY
 } from "../constants/actionTypes";
 
 const handleAddSize = (filterBy, filter) => {
@@ -61,7 +62,13 @@ export default (
       case UPDATE:
         return{
           ...state,
-          items: state.items.map((item) => (item._id === action.data._id ? action.data : item))
+          items: state.items.map((item) => (item._id === action.data._id ? action.data : item)),
+          itemToEdit: null
+        };
+      case UPDATE_TEMPORARLY:
+        return{
+          ...state,
+          itemToEdit: action.payload
         };
     case ID_TO_EDIT:
         return{
@@ -73,7 +80,7 @@ export default (
           ...state,
           editableId: null,
           showModal: false,
-          itemToEdit: null
+          // itemToEdit: null
         }
     default:
       return state;

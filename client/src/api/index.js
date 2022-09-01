@@ -15,4 +15,4 @@ export const postItem = (newItem) => API.post('/items', newItem);
 
 export const deleteItem = (id) => API.delete(`/items/${id}`);
 
-export const updateItem = (item) => API.patch(`/items/${item.id}`, item);
+export const updateItem = (item) => API.patch(`/items/${item._id}`, item);
