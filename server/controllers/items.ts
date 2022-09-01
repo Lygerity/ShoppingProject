@@ -18,12 +18,10 @@ export const getItemsAvailable =async (req: Request, res: Response) => {
 
 export const getItem = async (req: Request, res: Response)=>{
     const {id} = req.params;
-
     try{
         const post = await itemsModel.findById(id);
         res.status(200).json({data: post});
     }catch(error){
-        //res.status(404).json({message: error.message});
         console.log(error);
 
     }

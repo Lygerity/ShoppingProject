@@ -13,5 +13,6 @@ router.post('/', postItems);
 router.post('/update', updateItem);
 
 router.delete('/:id', deleteItem);
+router.patch('/:id', updateItem);
 
 export default router;

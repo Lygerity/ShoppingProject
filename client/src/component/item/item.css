@@ -46,6 +46,19 @@
     z-index: 3;
 }
 
+.editItemButton{
+        background-image: url('../../assets/icons/edit.png');
+        cursor: pointer;
+        padding-bottom: 24px;
+        width: 24px;
+        background-color: white;
+        border: 1px solid transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+}
+
 
 .item:hover .addButton{
     transition: background-color 0.2s ease 0s;

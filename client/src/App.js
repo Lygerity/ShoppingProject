@@ -7,6 +7,8 @@ import AdminForm from './component/admin/AdminForm';
 
 function App() {
   const [admin, setAdmin] = useState(false);
+  const[isOpen, setOpen] = useState(false);
+  const[isFilter, setFilter] = useState(false);
 
   const handleClick = () =>{
     setAdmin(!admin);
@@ -15,19 +17,19 @@ function App() {
   return (
     
     <main>
-      <button onClick={()=>handleClick()}>ADMIN</button>
+      <button className='adminButton' onClick={()=>handleClick()}>ADMIN</button>
       <div>
         {admin && <AdminForm admin={admin} setAdmin={setAdmin}/>}
       </div>
       <div className='App'>
         <div className='Sizes'>
           <h3>Sizes</h3>
-          <Sizes/>
+          <Sizes isFilter={isFilter} setFilter={setFilter}/>
         </div>
         <main className='itemList'>
-            <Items admin={admin} setAdmin={setAdmin}/>
+            <Items admin={admin} setAdmin={setAdmin} setOpen={setOpen} isFilter={isFilter}/>
         </main>
-        <Cart/>
+        <Cart isOpen={isOpen} setOpen={setOpen}/>
       </div>
     </main>
   );

@@ -8,3 +8,6 @@ export const START_LOADING = 'START_LOADING';
 export const FETCH_CART = 'FETCH_CART';
 export const ADD_ITEM_TO_LIST = 'ADD_ITEM_TO_LIST';
 export const REMOVE_ITEM_FROM_LIST = 'REMOVE_FROM_LIST';
+export const ID_TO_EDIT = 'ID_TO_EDIT';
+export const CLOSE_MODAL = 'CLOSE_MODAL';
+export const UPDATE = 'UPDATE';

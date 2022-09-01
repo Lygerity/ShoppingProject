@@ -35,7 +35,6 @@ const getItem = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         res.status(200).json({ data: post });
     }
     catch (error) {
-        //res.status(404).json({message: error.message});
         console.log(error);
     }
 });

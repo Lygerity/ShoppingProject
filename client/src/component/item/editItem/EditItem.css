@@ -1,0 +1,7 @@
+.itemToEdit div{
+    margin-top: 50px;
+}
+
+.itemToEdit div input{
+    font-size: larger;
+}

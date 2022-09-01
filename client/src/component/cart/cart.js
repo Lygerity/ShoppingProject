@@ -1,11 +1,10 @@
 import "./cart.css";
 
-import {React, useState} from 'react';
+import {React} from 'react';
 import CartItem from "./cartItems/cartItem";
 import { useSelector } from "react-redux";
-export default function Items(props){
+export default function Items({isOpen, setOpen}){
 
-    const[isOpen, setOpen] = useState(false)
     const cartItems = useSelector((state) => state.items.cartItems)
   
 

@@ -18,7 +18,22 @@
   display: block;
 }
 
-@media only screen and (min-width: 768px) {
+.adminButton{
+  height: 50px;
+  color: white;
+  background-color: black;
+  font-size: larger;
+  width: 150px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.adminButton:hover{
+  background-color: rgba(255, 187, 0, 0.747);
+  transition: 0.2s ease;
+}
+
+@media only screen and (min-width: 920px) {
   .App {
     text-align: center;
     display:grid;
@@ -40,7 +55,7 @@
 @media only screen and (min-width: 1350px){
   .itemList {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 100px;
     margin-left: 40px;
     margin-right:30px;
