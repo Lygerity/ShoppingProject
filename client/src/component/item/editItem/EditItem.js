@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getItem, updateItem } from "../../../actions/items";
+import { getItem, updateItemTemporarly } from "../../../actions/items";
 import "./EditItem.css";
 
 export default function EditItem(props) {
@@ -28,7 +28,7 @@ export default function EditItem(props) {
 
   useEffect(() => {
     if(name!=="" && price !=="" && size!=="" && url!==""){
-      dispatch(updateItem({_id: itemToEdit._id, name: name, price: price, size: size, url: url}));
+      dispatch(updateItemTemporarly({_id: itemToEdit._id, name: name, price: price, size: size, url: url}));
     }
   },[name, price, size, url])
 

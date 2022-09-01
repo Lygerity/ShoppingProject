@@ -17,5 +17,5 @@ app.use(cors());
 app.use('/items', items_1.default);
 app.get('/hello', (req, res) => res.send('Hello'));
 mongoose_1.default.connect(MongoUrl)
-    .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
+    .then(() => app.listen(PORT))
     .catch((error) => console.log(`${error} did not connect`));

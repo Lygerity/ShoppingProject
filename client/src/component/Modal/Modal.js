@@ -1,16 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
-import { closeModal } from '../../actions/items';
+import { closeModal, updateItem } from '../../actions/items';
 
 import './Modal.css';
 
 
-export default function(props){    
+export default function Modal(props){    
     const dispatch = useDispatch();
 
+    const itemToEdit = useSelector((state) => state.items.itemToEdit);
 
     const onClose = () => {
-        console.log(props.children.name);
+        dispatch(updateItem(itemToEdit));
         dispatch(closeModal());
+        props.setAdmin(false);
     }
 
 

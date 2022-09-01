@@ -10,7 +10,8 @@ import {
   ID_TO_EDIT,
   FETCH_ITEM,
   CLOSE_MODAL,
-  UPDATE
+  UPDATE,
+  UPDATE_TEMPORARLY
 } from "../constants/actionTypes";
 import * as api from "../api/index";
 
@@ -18,7 +19,7 @@ export const getItemsList = () => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
 
-    const { data: data } = await api.fetchItems();
+    const { data } = await api.fetchItems();
 
     dispatch({ type: FETCH_ALL, payload: { items: data } });
     dispatch({ type: END_LOADING });
@@ -37,7 +38,7 @@ export const removeItemFromList = (id) => (dispatch) => {
 
 export const postItem = (payload) => async (dispatch) => {
   try {
-    const { data: data } = await api.postItem(payload);
+    const { data } = await api.postItem(payload);
     dispatch({ type: CREATE, data });
   } catch (error) {
     console.log(error);
@@ -66,9 +67,13 @@ export const closeModal = () => (dispatch) =>{
     dispatch({type: CLOSE_MODAL});
 }
 
+export const updateItemTemporarly = (payload) => (dispatch) =>{
+  dispatch({type: UPDATE_TEMPORARLY, payload});
+}
+
 export const updateItem = (payload) => async (dispatch) => {
   try {
-    const { data: data } = await api.updateItem(payload);
+    const { data } = await api.updateItem(payload);
     dispatch({ type: UPDATE, data });
   } catch (error) {
     console.log(error);

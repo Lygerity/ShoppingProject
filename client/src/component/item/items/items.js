@@ -39,7 +39,7 @@ export default function Items({setOpen, admin, setAdmin}){
                 size={item.size} admin={admin} setAdmin={setAdmin} setOpen={setOpen}></Item>
             </div>
         )}
-            {editableId && <Modal title="test"><EditItem id={editableId}/></Modal>}
+            {editableId && admin && <Modal title="test"  setAdmin={setAdmin}><EditItem id={editableId}/></Modal>}
             </Fragment>
         );
     

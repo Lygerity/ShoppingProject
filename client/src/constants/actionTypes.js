@@ -11,3 +11,4 @@ export const REMOVE_ITEM_FROM_LIST = 'REMOVE_FROM_LIST';
 export const ID_TO_EDIT = 'ID_TO_EDIT';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
 export const UPDATE = 'UPDATE';
+export const UPDATE_TEMPORARLY = 'UPDATE_TEMPORARLY'
